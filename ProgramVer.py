@@ -22,7 +22,7 @@ def ProgramVer():
     pythonimage = PhotoImage(file='pythonpoweredlengthgif.gif')
     dfdlogo = Label(window, image = dfdimage)
     pythonpowered = Label(window, image = pythonimage)
-    info = Label(window, text='ProgramVer \n Version: BETA 1.0.0 (Build 1080)') #change respectively
+    info = Label(window, text='ProgramVer \n Version: 1.8.0 (Build 1080)') #change respectively
     trademarks = Label(window, text='Copyright (C) 2017 - 2018 Dog Face Development Co. All rights reserved in all countries. \n ProgramVer and its code, user interface and all other associated trademarks are protected \nby trademarks and copyright in Canada, the United States and other countries.') #change as needed
     licenseblurb = Label(window, text="""\n ProgramVer - Version window for DFD Co.'s programs
         Copyright (C) 2017-2018 Dog Face Development Company
