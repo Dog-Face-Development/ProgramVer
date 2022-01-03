@@ -19,5 +19,5 @@ Used to display version and copyright info of a program, much like how the winve
 
 You can edit the code to suit your needs and can also change the logo on top.
 
-`dfdlogo.gif` is Copyright © 2019 Dog Face Development Co.
+`dfdlogo.gif` is Copyright © 2019-2022 Dog Face Development Co.
 `pythonpoweredlength.gif` is Copyright © the Python Software Foundation.
