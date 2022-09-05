@@ -43,7 +43,7 @@ Please contribute using [GitHub Flow](https://guides.github.com/introduction/flo
 
 ### Did you fix whitespace, format code, or make a purely cosmetic patch?
 
-- Changes that are cosmetic in nature and do not add anything substantial to the stability, functionality, or testability of Auto Announcements are still accepted! Just follow the same instructions as above.
+- Changes that are cosmetic in nature and do not add anything substantial to the stability, functionality, or testability of ProgramVer are still accepted! Just follow the same instructions as above.
 - However, do ensure that any cosmetic changes follow the Dog Face Development Co. Style Guides, found [below](#style).
 
 ### Do you intend to add a new feature or change an existing one?
@@ -53,7 +53,7 @@ Please contribute using [GitHub Flow](https://guides.github.com/introduction/flo
 
 ### Do you have questions about the source code?
 
-- Ask any question about how to use Auto Announcements on our [Discord](https://discord.gg/x3G8adwVUe).
+- Ask any question about how to use ProgramVer on our [Discord](https://discord.gg/x3G8adwVUe).
 - If it does not get answered, open an [issue](https://github.com/Dog-Face-Development/ProgramVer/issues/new/choose).  
 
 ## Coding Conventions
