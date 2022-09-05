@@ -56,13 +56,13 @@
 * Links to License text.
 * Links to EULA text.
 * Includes logo and Python Powered images.
-* Cross Platform.
+* Cross platform.
 
 ## Download
 
 You can **[download](https://github.com/Dog-Face-Development/ProgramVer/releases/latest) the source code** to run the scripts from the command line on Windows, macOS and Linux. **This will require [Python](https://www.python.org/downloads/).**
 
-You can **[download](https://github.com/Dog-Face-Development/ProgramVer/releases/latest) the latest executable version** of Auto Announcements for Windows. **This does not require Python.**
+You can **[download](https://github.com/Dog-Face-Development/ProgramVer/releases/latest) the latest executable version** of ProgramVer for Windows. **This does not require Python.**
 
 ## How To Use
 
@@ -70,10 +70,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com/downloa
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/ProgramVer/Auto-Anouncements.git
+$ git clone https://github.com/Dog-Face-Development/ProgramVer.git
 
 # Go into the repository
-$ cd Auto-Announcements
+$ cd ProgramVer
 
 # Run ProgramVer
 $ python main.py
