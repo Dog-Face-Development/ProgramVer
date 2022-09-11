@@ -1,5 +1,19 @@
-# This is the standard program used by Dog Face Development Co. for versioning and displaying copyright infor for their products.
-# Copyright (C) 2017 - 2022 Dog Face Development Co.
+"""
+ProgramVer - A Python version of Microsoft's 'winver'.
+Copyright (C) 2017-2022 Dog Face Development Co.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, version 3 of the License.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
 
 # Import Statements
 from tkinter import *
@@ -36,7 +50,7 @@ def ProgramVer():
     pythonimage = PhotoImage(file='pythonpoweredlengthgif.gif')
     dfdlogo = Label(window, image = dfdimage)
     pythonpowered = Label(window, image = pythonimage)
-    info = Label(window, text='ProgramVer \n Version: 1.8.0 (Build 1080)') #change respectively
+    info = Label(window, text='ProgramVer \n Version: 1.9.0 (Build #)') #change respectively
     trademarks = Label(window, text='Copyright (C) 2017 - 2022 Dog Face Development Co. All rights reserved in all countries. \n ProgramVer and its code, user interface and all other associated trademarks are protected \nby trademarks and copyright in Canada, the United States and other countries.') #change as needed
     licenseblurb = Label(window, text="""\n ProgramVer - Version window for DFD Co.'s programs
         Copyright (C) 2017-2022 Dog Face Development Company
