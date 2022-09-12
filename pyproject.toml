@@ -1,0 +1,31 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "ProgramVer"
+version = "1.9.0"
+authors = [
+  { name= "willtheorangeguy" },
+]
+description = "A Python version of Microsoft's 'winver', built to be customizable, and to show copyright info and licenses."
+readme = "README.md"
+license = { file="LICENSE.md" }
+requires-python = ">=3.9"
+classifiers = [
+    'Development Status :: 5 - Production/Stable',
+    'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+    'Natural Language :: English',
+    'Operating System :: OS Independent',
+    'Topic :: Software Development :: User Interfaces',
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Dog-Face-Development/ProgramVer"
+"Bug Tracker" = "https://github.com/Dog-Face-Development/ProgramVer/issues"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["imgs"]
