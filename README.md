@@ -12,9 +12,7 @@
 <!-- Badges -->
 <div align="center">
   <!-- Stability -->
-  <img alt="GitHub Test State" src="https://github.com/Dog-Face-Development/ProgramVer/actions/workflows/test.yml/badge.svg">
-  <!-- Stability -->
-  <img alt="GitHub Build State" src="https://github.com/Dog-Face-Development/ProgramVer/actions/workflows/build.yml/badge.svg">
+  <img alt="PyPI Build State" src="https://github.com/Dog-Face-Development/ProgramVer/actions/workflows/push-to-pypi.yml/badge.svg">
   <!-- Stability -->
   <img alt="Pylint State" src="https://github.com/Dog-Face-Development/ProgramVer/actions/workflows/pylint.yml/badge.svg">
   <!-- CodeQL -->
@@ -66,17 +64,33 @@ You can **[download](https://github.com/Dog-Face-Development/ProgramVer/releases
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com/downloads) and [Python](https://www.python.org/downloads/) installed on your computer. If you would rather not use Git, you can just download the scripts from GitHub above. From your command line:
+To run the application, you can use [Git and the Python Interpreter](https://github.com/Dog-Face-Development/ProgramVer/main/README.md#git), which allows you to clone and run the application, or [`pip`](https://github.com/Dog-Face-Development/ProgramVer/main/README.md#pip) to create a command line application.
+
+### Git
+
+To clone and run this application, you'll need [Git](https://git-scm.com/downloads) and [Python](https://www.python.org/downloads/) installed on your computer. If you would rather not use Git, you can just download the script from GitHub above. From your command line:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/Dog-Face-Development/ProgramVer.git
+$ git clone https://github.com/Dog-Face-Development/ProgramVer
 
 # Go into the repository
 $ cd ProgramVer
 
-# Run ProgramVer
+# Run the CLI
 $ python main.py
+```
+
+### `pip`
+
+You can install the program from the [Python Package Index](https://pypi.org/project/programver/) through `pip`.
+
+```bash
+# Install via pip
+$ pip install programver
+
+# Run the CLI
+$ programver
 ```
 
 However, you may want to add the version window to your program. To do so, follow these steps:
