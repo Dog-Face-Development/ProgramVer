@@ -46,8 +46,8 @@ def ProgramVer():
     # Window Elements
     window.title('Copyright & Version Info for ProgramVer') #change name based on program name
     # UI Elements
-    dfdimage = PhotoImage(file='dfdlogo.gif')
-    pythonimage = PhotoImage(file='pythonpoweredlengthgif.gif')
+    dfdimage = PhotoImage(file='imgs/dfdlogo.gif')
+    pythonimage = PhotoImage(file='imgs/pythonpoweredlengthgif.gif')
     dfdlogo = Label(window, image = dfdimage)
     pythonpowered = Label(window, image = pythonimage)
     info = Label(window, text='ProgramVer \n Version: 1.9.0 (Build #)') #change respectively

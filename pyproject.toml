@@ -23,3 +23,9 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/Dog-Face-Development/ProgramVer"
 "Bug Tracker" = "https://github.com/Dog-Face-Development/ProgramVer/issues"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["imgs"]

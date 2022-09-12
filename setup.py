@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 def readme():
     with open('README.md') as f:
@@ -19,6 +19,9 @@ setup(
     keywords='program version windows winver microsoft license gui',
     url='https://github.com/Dog-Face-Development/ProgramVer',
     author='willtheorangeguy',
+    packages=find_packages(where="imgs"),
+    package_dir={"": "imgs"},
+    include_package_data=True,
     entry_points={
         'console_scripts': [
             'programver=main:ProgramVer'
