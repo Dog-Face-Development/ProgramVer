@@ -22,6 +22,7 @@ setup(
     packages=find_packages(where="imgs"),
     package_dir={"": "imgs"},
     include_package_data=True,
+    py_modules = ['main'],
     entry_points={
         'console_scripts': [
             'programver=main:ProgramVer'
