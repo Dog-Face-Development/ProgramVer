@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:ProgramVer.py
 # This is the standard program used by Dog Face Development Co. for versioning and displaying copyright infor for their products.
 # Copyright (C) 2017 - 2022 Dog Face Development Co.
 
@@ -61,3 +62,10 @@ def ProgramVer():
     pythonpowered.pack(side=BOTTOM)
     # Maintain Window
     window.mainloop()
+=======
+from main import ProgramVer
+
+
+if __name__ == '__main__':
+    ProgramVer()
+>>>>>>> Stashed changes:__main__.py
