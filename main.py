@@ -20,6 +20,8 @@ from tkinter import *
 import os
 
 # Document Functions
+
+
 def openLicense():
     windowl = Tk()
     licensefile = open("LICENSE.txt", "r")  # change file address as needed
