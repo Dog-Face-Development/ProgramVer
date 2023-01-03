@@ -1,6 +1,6 @@
 """
 ProgramVer - A Python version of Microsoft's 'winver'.
-Copyright (C) 2017-2022 Dog Face Development Co.
+Copyright (C) 2017-2023 Dog Face Development Co.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -59,12 +59,12 @@ def ProgramVer():
     )  # change respectively
     trademarks = Label(
         window,
-        text="Copyright (C) 2017 - 2022 Dog Face Development Co. All rights reserved in all countries. \n ProgramVer and its code, user interface and all other associated trademarks are protected \nby trademarks and copyright in Canada, the United States and other countries.",
+        text="Copyright (C) 2017 - 2023 Dog Face Development Co. All rights reserved in all countries. \n ProgramVer and its code, user interface and all other associated trademarks are protected \nby trademarks and copyright in Canada, the United States and other countries.",
     )  # change as needed
     licenseblurb = Label(
         window,
         text="""\n ProgramVer - Version window for DFD Co.'s programs
-        Copyright (C) 2017-2022 Dog Face Development Company
+        Copyright (C) 2017-2023 Dog Face Development Company
     
         This program is free software: you can redistribute it and/or modify
         it under the terms of the GNU General Public License as published by
