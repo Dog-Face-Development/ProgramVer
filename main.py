@@ -14,12 +14,14 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
+import os
+from tkinter import *
 
 # Import Statements
-from tkinter import *
-import os
 
 # Document Functions
+
+
 def openLicense():
     windowl = Tk()
     licensefile = open("LICENSE.txt", "r")  # change file address as needed
@@ -65,7 +67,7 @@ def ProgramVer():
         window,
         text="""\n ProgramVer - Version window for DFD Co.'s programs
         Copyright (C) 2017-2023 Dog Face Development Company
-    
+
         This program is free software: you can redistribute it and/or modify
         it under the terms of the GNU General Public License as published by
         the Free Software Foundation, version 3 of the License.
