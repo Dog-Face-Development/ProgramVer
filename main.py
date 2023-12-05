@@ -26,8 +26,8 @@ from tkinter import Tk, Text, INSERT, PhotoImage, Label, Button, TOP, BOTTOM
 def openLicense():
     """Opens the license file in a new window."""
     windowl = Tk()
-    licensefile = open("LICENSE.txt", "r", encoding="UTF-8")  # change file address as needed
-    licensecontents = licensefile.read()
+    with open("LICENSE.txt", "r", encoding="UTF-8") as licensefile:
+        licensecontents = licensefile.read()
     licensefile.close()
     windowl.title("License")
     licensetext = Text(windowl)
@@ -38,8 +38,8 @@ def openLicense():
 def openEULA():
     """Opens the EULA file in a new window."""
     windowl = Tk()
-    eulafile = open("EULA.txt", "r", encoding="UTF-8")  # change file address as needed
-    eulacontents = eulafile.read()
+    with open("EULA.txt", "r", encoding="UTF-8") as eulafile:
+        eulacontents = eulafile.read()
     eulafile.close()
     windowl.title("EULA")
     eulatext = Text(windowl)
