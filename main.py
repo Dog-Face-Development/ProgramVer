@@ -14,8 +14,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-import os
-from tkinter import *
+#pylint: disable=import-error, invalid-name
+
+from tkinter import Tk, Text, INSERT, PhotoImage, Label, Button, TOP, BOTTOM
 
 # Import Statements
 
@@ -23,8 +24,9 @@ from tkinter import *
 
 
 def openLicense():
+    """Opens the license file in a new window."""
     windowl = Tk()
-    licensefile = open("LICENSE.txt", "r")  # change file address as needed
+    licensefile = open("LICENSE.txt", "r", encoding="UTF-8")  # change file address as needed
     licensecontents = licensefile.read()
     licensefile.close()
     windowl.title("License")
@@ -34,8 +36,9 @@ def openLicense():
 
 
 def openEULA():
+    """Opens the EULA file in a new window."""
     windowl = Tk()
-    eulafile = open("EULA.txt", "r")  # change file address as needed
+    eulafile = open("EULA.txt", "r", encoding="UTF-8")  # change file address as needed
     eulacontents = eulafile.read()
     eulafile.close()
     windowl.title("EULA")
@@ -46,6 +49,7 @@ def openEULA():
 
 # ProgramVer Function
 def ProgramVer():
+    """Main function for ProgramVer."""
     window = Tk()
     # Window Elements
     window.title(
@@ -61,7 +65,10 @@ def ProgramVer():
     )  # change respectively
     trademarks = Label(
         window,
-        text="Copyright (C) 2017 - 2023 Dog Face Development Co. All rights reserved in all countries. \n ProgramVer and its code, user interface and all other associated trademarks are protected \nby trademarks and copyright in Canada, the United States and other countries.",
+        text="Copyright (C) 2017 - 2023 Dog Face Development Co. \
+            All rights reserved in all countries. \
+                \n ProgramVer and its code, user interface and all other associated trademarks are protected \
+                \nby trademarks and copyright in Canada, the United States and other countries.",
     )  # change as needed
     licenseblurb = Label(
         window,
