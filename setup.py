@@ -1,15 +1,19 @@
+"""Setup file for ProgramVer."""
+
 from setuptools import setup, find_packages
 
 
 def readme():
-    with open("README.md") as f:
+    """Reads the README.md file."""
+    with open("README.md", encoding="UTF-8") as f:
         return f.read()
 
 
 setup(
     name="programver",
     version="1.9.0",
-    description="A Python version of Microsoft's 'winver', built to be customizable, and to show copyright info and licenses.",
+    description="A Python version of Microsoft's 'winver', \
+        built to be customizable, and to show copyright info and licenses.",
     long_description=readme(),
     classifiers=[
         "Development Status :: 5 - Production/Stable",
