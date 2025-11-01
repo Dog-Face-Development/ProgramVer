@@ -15,6 +15,8 @@
   <img alt="PyPI Build State" src="https://github.com/Dog-Face-Development/ProgramVer/actions/workflows/push-to-pypi.yml/badge.svg">
   <!-- Stability -->
   <img alt="Pylint State" src="https://github.com/Dog-Face-Development/ProgramVer/actions/workflows/pylint.yml/badge.svg">
+  <!-- Tests -->
+  <img alt="Tests State" src="https://github.com/Dog-Face-Development/ProgramVer/actions/workflows/tests.yml/badge.svg">
   <!-- CodeQL -->
   <img alt="CodeQL State" src="https://github.com/Dog-Face-Development/ProgramVer/actions/workflows/codeql-analysis.yml/badge.svg">
   <!-- Version -->
@@ -105,6 +107,36 @@ However, you may want to add the version window to your program. To do so, follo
 ## Support
 
 Customization for ProgramVer can be found in the [`CUSTOMIZATION`](https://github.com/Dog-Face-Development/ProgramVer/blob/master/docs/CUSTOMIZATION.md) doc. More documentation is available in the **[Documentation](https://github.com/Dog-Face-Development/ProgramVer/tree/master/docs)** and on the **[Wiki](https://github.com/Dog-Face-Development/ProgramVer/wiki)**. If more support is required, please open a **[GitHub Discussion](https://github.com/Dog-Face-Development/ProgramVer/discussions)** or join our **[Discord](https://discord.gg/x3G8adwVUe)**.
+
+## Testing
+
+ProgramVer includes a comprehensive test suite to ensure code quality and reliability. The test suite achieves 100% code coverage for the main module.
+
+### Running Tests
+
+To run the test suite locally:
+
+```bash
+# Install test dependencies
+pip install -r requirements.txt
+
+# Run tests (Linux)
+xvfb-run -a python -m pytest tests/ -v
+
+# Run tests (Windows/macOS)
+python -m pytest tests/ -v
+
+# Run tests with coverage
+python -m pytest tests/ --cov=main --cov-report=term-missing
+```
+
+For more information about testing, see the [tests README](tests/README.md).
+
+### Continuous Integration
+
+Tests are automatically run on GitHub Actions for every push and pull request across:
+- Operating Systems: Ubuntu, Windows, and macOS
+- Python Versions: 3.9, 3.10, 3.11, and 3.12
 
 ## Contributing
 
