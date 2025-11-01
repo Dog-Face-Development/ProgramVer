@@ -7,7 +7,9 @@ it under the terms of the GNU General Public License as published by
 the Free Software Foundation, version 3 of the License.
 """
 
-# pylint: disable=import-error, invalid-name, unused-argument, wrong-import-position, import-outside-toplevel
+# pylint: disable=import-error, invalid-name, wrong-import-position, import-outside-toplevel, unused-argument
+# unused-argument is disabled because @patch decorators inject mocked objects as parameters
+# even when not all mocks are used in every test
 
 import unittest
 from unittest.mock import Mock, patch, mock_open
@@ -157,7 +159,8 @@ class TestProgramVer(unittest.TestCase):
         mock_tk.assert_called_once()
         # Verify window title was set
         mock_window.title.assert_called_once()
-        assert "ProgramVer" in str(mock_window.title.call_args)
+        title_text = mock_window.title.call_args[0][0]
+        assert "ProgramVer" in title_text
 
     @patch("main.Tk")
     @patch("main.PhotoImage")
@@ -195,9 +198,8 @@ class TestProgramVer(unittest.TestCase):
 
         ProgramVer()
 
-        # Verify Label was called multiple times
+        # Verify Label was called multiple times to create all labels
         assert mock_label.call_count >= 5
-        # Verify labels were created with window
 
     @patch("main.Tk")
     @patch("main.PhotoImage")
