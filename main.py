@@ -14,7 +14,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-#pylint: disable=import-error, invalid-name
+
+# pylint: disable=import-error, invalid-name
 
 import os
 from tkinter import Tk, Text, INSERT, PhotoImage, Label, Button, TOP, BOTTOM
@@ -23,10 +24,12 @@ from tkinter import Tk, Text, INSERT, PhotoImage, Label, Button, TOP, BOTTOM
 
 # Helper Functions
 
+
 def get_resource_path(filename):
     """Get the absolute path to a resource file."""
     base_dir = os.path.dirname(os.path.abspath(__file__))
     return os.path.join(base_dir, filename)
+
 
 # Document Functions
 
