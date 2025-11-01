@@ -6,7 +6,8 @@ This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, version 3 of the License.
 """
-#pylint: disable=import-error, invalid-name, unused-argument, wrong-import-position, import-outside-toplevel
+
+# pylint: disable=import-error, invalid-name, unused-argument, wrong-import-position, import-outside-toplevel
 
 import unittest
 from unittest.mock import Mock, patch, mock_open
@@ -14,7 +15,7 @@ import os
 import sys
 
 # Add parent directory to path for imports
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from main import openLicense, openEULA, ProgramVer, get_resource_path
 
@@ -42,9 +43,11 @@ class TestGetResourcePath(unittest.TestCase):
 class TestOpenLicense(unittest.TestCase):
     """Test cases for openLicense function."""
 
-    @patch('main.Text')
-    @patch('main.Tk')
-    @patch('builtins.open', new_callable=mock_open, read_data='GNU GENERAL PUBLIC LICENSE')
+    @patch("main.Text")
+    @patch("main.Tk")
+    @patch(
+        "builtins.open", new_callable=mock_open, read_data="GNU GENERAL PUBLIC LICENSE"
+    )
     def test_openLicense_creates_window(self, mock_file, mock_tk, mock_text):
         """Test that openLicense creates a window and reads LICENSE.txt."""
         mock_window = Mock()
@@ -63,9 +66,9 @@ class TestOpenLicense(unittest.TestCase):
         # Verify window title was set
         mock_window.title.assert_called_once_with("License")
 
-    @patch('main.Tk')
-    @patch('builtins.open', new_callable=mock_open, read_data='Test License Content')
-    @patch('main.Text')
+    @patch("main.Tk")
+    @patch("builtins.open", new_callable=mock_open, read_data="Test License Content")
+    @patch("main.Text")
     def test_openLicense_displays_content(self, mock_text, mock_file, mock_tk):
         """Test that openLicense displays license content."""
         mock_window = Mock()
@@ -86,9 +89,11 @@ class TestOpenLicense(unittest.TestCase):
 class TestOpenEULA(unittest.TestCase):
     """Test cases for openEULA function."""
 
-    @patch('main.Text')
-    @patch('main.Tk')
-    @patch('builtins.open', new_callable=mock_open, read_data='END USER LICENSE AGREEMENT')
+    @patch("main.Text")
+    @patch("main.Tk")
+    @patch(
+        "builtins.open", new_callable=mock_open, read_data="END USER LICENSE AGREEMENT"
+    )
     def test_openEULA_creates_window(self, mock_file, mock_tk, mock_text):
         """Test that openEULA creates a window and reads EULA.txt."""
         mock_window = Mock()
@@ -107,9 +112,9 @@ class TestOpenEULA(unittest.TestCase):
         # Verify window title was set
         mock_window.title.assert_called_once_with("EULA")
 
-    @patch('main.Tk')
-    @patch('builtins.open', new_callable=mock_open, read_data='Test EULA Content')
-    @patch('main.Text')
+    @patch("main.Tk")
+    @patch("builtins.open", new_callable=mock_open, read_data="Test EULA Content")
+    @patch("main.Text")
     def test_openEULA_displays_content(self, mock_text, mock_file, mock_tk):
         """Test that openEULA displays EULA content."""
         mock_window = Mock()
@@ -130,11 +135,13 @@ class TestOpenEULA(unittest.TestCase):
 class TestProgramVer(unittest.TestCase):
     """Test cases for ProgramVer function."""
 
-    @patch('main.Tk')
-    @patch('main.PhotoImage')
-    @patch('main.Label')
-    @patch('main.Button')
-    def test_programver_creates_window(self, mock_button, mock_label, mock_photoimage, mock_tk):
+    @patch("main.Tk")
+    @patch("main.PhotoImage")
+    @patch("main.Label")
+    @patch("main.Button")
+    def test_programver_creates_window(
+        self, mock_button, mock_label, mock_photoimage, mock_tk
+    ):
         """Test that ProgramVer creates main window with all components."""
         mock_window = Mock()
         mock_tk.return_value = mock_window
@@ -152,11 +159,13 @@ class TestProgramVer(unittest.TestCase):
         mock_window.title.assert_called_once()
         assert "ProgramVer" in str(mock_window.title.call_args)
 
-    @patch('main.Tk')
-    @patch('main.PhotoImage')
-    @patch('main.Label')
-    @patch('main.Button')
-    def test_programver_loads_images(self, mock_button, mock_label, mock_photoimage, mock_tk):
+    @patch("main.Tk")
+    @patch("main.PhotoImage")
+    @patch("main.Label")
+    @patch("main.Button")
+    def test_programver_loads_images(
+        self, mock_button, mock_label, mock_photoimage, mock_tk
+    ):
         """Test that ProgramVer loads required images."""
         mock_window = Mock()
         mock_tk.return_value = mock_window
@@ -168,15 +177,17 @@ class TestProgramVer(unittest.TestCase):
         assert mock_photoimage.call_count == 2
         # Check that both images are loaded with absolute paths
         calls = mock_photoimage.call_args_list
-        image_files = [call[1]['file'] for call in calls]
+        image_files = [call[1]["file"] for call in calls]
         assert any("dfdlogo.gif" in img for img in image_files)
         assert any("pythonpoweredlengthgif.gif" in img for img in image_files)
 
-    @patch('main.Tk')
-    @patch('main.PhotoImage')
-    @patch('main.Label')
-    @patch('main.Button')
-    def test_programver_creates_labels(self, mock_button, mock_label, mock_photoimage, mock_tk):
+    @patch("main.Tk")
+    @patch("main.PhotoImage")
+    @patch("main.Label")
+    @patch("main.Button")
+    def test_programver_creates_labels(
+        self, mock_button, mock_label, mock_photoimage, mock_tk
+    ):
         """Test that ProgramVer creates appropriate labels."""
         mock_window = Mock()
         mock_tk.return_value = mock_window
@@ -188,11 +199,13 @@ class TestProgramVer(unittest.TestCase):
         assert mock_label.call_count >= 5
         # Verify labels were created with window
 
-    @patch('main.Tk')
-    @patch('main.PhotoImage')
-    @patch('main.Label')
-    @patch('main.Button')
-    def test_programver_creates_buttons(self, mock_button, mock_label, mock_photoimage, mock_tk):
+    @patch("main.Tk")
+    @patch("main.PhotoImage")
+    @patch("main.Label")
+    @patch("main.Button")
+    def test_programver_creates_buttons(
+        self, mock_button, mock_label, mock_photoimage, mock_tk
+    ):
         """Test that ProgramVer creates license and EULA buttons."""
         mock_window = Mock()
         mock_tk.return_value = mock_window
@@ -204,15 +217,17 @@ class TestProgramVer(unittest.TestCase):
         assert mock_button.call_count == 2
         # Verify buttons have correct text and commands
         calls = mock_button.call_args_list
-        button_texts = [call[1]['text'] for call in calls]
+        button_texts = [call[1]["text"] for call in calls]
         assert "Open License" in button_texts
         assert "Open EULA" in button_texts
 
-    @patch('main.Tk')
-    @patch('main.PhotoImage')
-    @patch('main.Label')
-    @patch('main.Button')
-    def test_programver_button_commands(self, mock_button, mock_label, mock_photoimage, mock_tk):
+    @patch("main.Tk")
+    @patch("main.PhotoImage")
+    @patch("main.Label")
+    @patch("main.Button")
+    def test_programver_button_commands(
+        self, mock_button, mock_label, mock_photoimage, mock_tk
+    ):
         """Test that buttons are linked to correct command functions."""
         mock_window = Mock()
         mock_tk.return_value = mock_window
@@ -221,7 +236,7 @@ class TestProgramVer(unittest.TestCase):
         ProgramVer()
 
         calls = mock_button.call_args_list
-        commands = [call[1].get('command') for call in calls]
+        commands = [call[1].get("command") for call in calls]
         # Verify that openLicense and openEULA are set as commands
         assert openLicense in commands
         assert openEULA in commands
@@ -233,19 +248,21 @@ class TestModuleIntegration(unittest.TestCase):
     def test_module_imports(self):
         """Test that the main module can be imported successfully."""
         import main
-        assert hasattr(main, 'ProgramVer')
-        assert hasattr(main, 'openLicense')
-        assert hasattr(main, 'openEULA')
-        assert hasattr(main, 'get_resource_path')
+
+        assert hasattr(main, "ProgramVer")
+        assert hasattr(main, "openLicense")
+        assert hasattr(main, "openEULA")
+        assert hasattr(main, "get_resource_path")
 
     def test_functions_are_callable(self):
         """Test that all exported functions are callable."""
         import main
+
         assert callable(main.ProgramVer)
         assert callable(main.openLicense)
         assert callable(main.openEULA)
         assert callable(main.get_resource_path)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
