@@ -16,9 +16,17 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 #pylint: disable=import-error, invalid-name
 
+import os
 from tkinter import Tk, Text, INSERT, PhotoImage, Label, Button, TOP, BOTTOM
 
 # Import Statements
+
+# Helper Functions
+
+def get_resource_path(filename):
+    """Get the absolute path to a resource file."""
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(base_dir, filename)
 
 # Document Functions
 
@@ -26,9 +34,9 @@ from tkinter import Tk, Text, INSERT, PhotoImage, Label, Button, TOP, BOTTOM
 def openLicense():
     """Opens the license file in a new window."""
     windowl = Tk()
-    with open("LICENSE.txt", "r", encoding="UTF-8") as licensefile:
+    license_path = get_resource_path("LICENSE.txt")
+    with open(license_path, "r", encoding="UTF-8") as licensefile:
         licensecontents = licensefile.read()
-    licensefile.close()
     windowl.title("License")
     licensetext = Text(windowl)
     licensetext.insert(INSERT, licensecontents)
@@ -38,9 +46,9 @@ def openLicense():
 def openEULA():
     """Opens the EULA file in a new window."""
     windowl = Tk()
-    with open("EULA.txt", "r", encoding="UTF-8") as eulafile:
+    eula_path = get_resource_path("EULA.txt")
+    with open(eula_path, "r", encoding="UTF-8") as eulafile:
         eulacontents = eulafile.read()
-    eulafile.close()
     windowl.title("EULA")
     eulatext = Text(windowl)
     eulatext.insert(INSERT, eulacontents)
@@ -56,8 +64,8 @@ def ProgramVer():
         "Copyright & Version Info for ProgramVer"
     )  # change name based on program name
     # UI Elements
-    dfdimage = PhotoImage(file="imgs/dfdlogo.gif")
-    pythonimage = PhotoImage(file="imgs/pythonpoweredlengthgif.gif")
+    dfdimage = PhotoImage(file=get_resource_path("imgs/dfdlogo.gif"))
+    pythonimage = PhotoImage(file=get_resource_path("imgs/pythonpoweredlengthgif.gif"))
     dfdlogo = Label(window, image=dfdimage)
     pythonpowered = Label(window, image=pythonimage)
     info = Label(
