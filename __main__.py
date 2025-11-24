@@ -1,5 +1,6 @@
 """Main entry point for the application."""
-#pylint: disable=import-error, invalid-name
+
+# pylint: disable=import-error, invalid-name
 
 from main import ProgramVer
 
