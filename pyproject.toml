@@ -14,15 +14,15 @@ license = { file="LICENSE.md" }
 requires-python = ">=3.9"
 classifiers = [
     'Development Status :: 5 - Production/Stable',
-    'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+    'License :: OSI Approved :: MIT License',
     'Natural Language :: English',
     'Operating System :: OS Independent',
     'Topic :: Software Development :: User Interfaces',
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/Dog-Face-Development/ProgramVer"
-"Bug Tracker" = "https://github.com/Dog-Face-Development/ProgramVer/issues"
+"Homepage" = "https://github.com/willtheorangeguy/ProgramVer"
+"Bug Tracker" = "https://github.com/willtheorangeguy/ProgramVer/issues"
 
 [tool.setuptools]
 include-package-data = true

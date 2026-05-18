@@ -1,6 +1,6 @@
 <!-- Logo -->
 <h1 align="center">
-  <img src="https://github.com/Dog-Face-Development/ProgramVer/blob/master/docs/images/logo.png" height="250px" width="400px" alt="ProgramVer">
+  <img src="https://github.com/willtheorangeguy/ProgramVer/blob/master/docs/images/logo.png" height="250px" width="400px" alt="ProgramVer">
   <br>
   ProgramVer
   <br>
@@ -12,25 +12,25 @@
 <!-- Badges -->
 <div align="center">
   <!-- Stability -->
-  <img alt="PyPI Build State" src="https://github.com/Dog-Face-Development/ProgramVer/actions/workflows/push-to-pypi.yml/badge.svg">
+  <img alt="PyPI Build State" src="https://github.com/willtheorangeguy/ProgramVer/actions/workflows/push-to-pypi.yml/badge.svg">
   <!-- Stability -->
-  <img alt="Pylint State" src="https://github.com/Dog-Face-Development/ProgramVer/actions/workflows/pylint.yml/badge.svg">
+  <img alt="Pylint State" src="https://github.com/willtheorangeguy/ProgramVer/actions/workflows/pylint.yml/badge.svg">
   <!-- Tests -->
-  <img alt="Tests State" src="https://github.com/Dog-Face-Development/ProgramVer/actions/workflows/tests.yml/badge.svg">
+  <img alt="Tests State" src="https://github.com/willtheorangeguy/ProgramVer/actions/workflows/tests.yml/badge.svg">
   <!-- CodeQL -->
-  <img alt="CodeQL State" src="https://github.com/Dog-Face-Development/ProgramVer/actions/workflows/codeql-analysis.yml/badge.svg">
+  <img alt="CodeQL State" src="https://github.com/willtheorangeguy/ProgramVer/actions/workflows/codeql-analysis.yml/badge.svg">
   <!-- Version -->
-  <img alt="GitHub Version" src="https://img.shields.io/github/v/release/Dog-Face-Development/ProgramVer?include_prereleases">
+  <img alt="GitHub Version" src="https://img.shields.io/github/v/release/willtheorangeguy/ProgramVer?include_prereleases">
   <!-- Issues -->
-  <img alt="GitHub Issues" src="https://img.shields.io/github/issues/Dog-Face-Development/ProgramVer">
+  <img alt="GitHub Issues" src="https://img.shields.io/github/issues/willtheorangeguy/ProgramVer">
   <!-- Pull Requests -->
-  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/Dog-Face-Development/ProgramVer">
+  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/willtheorangeguy/ProgramVer">
   <!-- Discord -->
   <img alt="Discord Server ID" src="https://img.shields.io/discord/1016437709247619092">
   <!-- Downloads -->
-  <img alt="Downloads" src="https://img.shields.io/github/downloads/Dog-Face-Development/ProgramVer/total">
+  <img alt="Downloads" src="https://img.shields.io/github/downloads/willtheorangeguy/ProgramVer/total">
   <!-- Language Count -->
-  <img alt="GitHub Languages" src="https://img.shields.io/github/languages/count/Dog-Face-Development/ProgramVer">
+  <img alt="GitHub Languages" src="https://img.shields.io/github/languages/count/willtheorangeguy/ProgramVer">
 </div>
 
 <!-- Navigation -->
@@ -46,7 +46,7 @@
 
 <!-- Screenshot(s) -->
 <div align="center">
-    <img alt="Main image" src="https://github.com/Dog-Face-Development/ProgramVer/blob/master/docs/images/welcome.png">
+    <img alt="Main image" src="https://github.com/willtheorangeguy/ProgramVer/blob/master/docs/images/welcome.png">
 </div>
 
 ## Key Features
@@ -60,13 +60,13 @@
 
 ## Download
 
-You can **[download](https://github.com/Dog-Face-Development/ProgramVer/releases/latest) the source code** to run the scripts from the command line on Windows, macOS and Linux. **This will require [Python](https://www.python.org/downloads/).**
+You can **[download](https://github.com/willtheorangeguy/ProgramVer/releases/latest) the source code** to run the scripts from the command line on Windows, macOS and Linux. **This will require [Python](https://www.python.org/downloads/).**
 
-You can **[download](https://github.com/Dog-Face-Development/ProgramVer/releases/latest) the latest executable version** of ProgramVer for Windows. **This does not require Python.**
+You can **[download](https://github.com/willtheorangeguy/ProgramVer/releases/latest) the latest executable version** of ProgramVer for Windows. **This does not require Python.**
 
 ## How To Use
 
-To run the application, you can use [Git and the Python Interpreter](https://github.com/Dog-Face-Development/ProgramVer/main/README.md#git), which allows you to clone and run the application, or [`pip`](https://github.com/Dog-Face-Development/ProgramVer/main/README.md#pip) to create a command line application.
+To run the application, you can use [Git and the Python Interpreter](https://github.com/willtheorangeguy/ProgramVer/main/README.md#git), which allows you to clone and run the application, or [`pip`](https://github.com/willtheorangeguy/ProgramVer/main/README.md#pip) to create a command line application.
 
 ### Git
 
@@ -74,7 +74,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com/downloa
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/Dog-Face-Development/ProgramVer
+$ git clone https://github.com/willtheorangeguy/ProgramVer
 
 # Go into the repository
 $ cd ProgramVer
@@ -97,7 +97,7 @@ $ programver
 
 However, you may want to add the version window to your program. To do so, follow these steps:
 
-1. Download the latest source code release from [GitHub Releases](https://github.com/Dog-Face-Development/ProgramVer/releases/latest) page.
+1. Download the latest source code release from [GitHub Releases](https://github.com/willtheorangeguy/ProgramVer/releases/latest) page.
 2. Extract the source code files using a program like [7-Zip](https://www.7-zip.org/).
 3. Copy the `ProgramVer.py` file to your project's main directory.
 4. Import ProgramVer by adding `from ProgramVer import *` to your Python `import` statements.
@@ -106,7 +106,7 @@ However, you may want to add the version window to your program. To do so, follo
 
 ## Support
 
-Customization for ProgramVer can be found in the [`CUSTOMIZATION`](https://github.com/Dog-Face-Development/ProgramVer/blob/master/docs/CUSTOMIZATION.md) doc. More documentation is available in the **[Documentation](https://github.com/Dog-Face-Development/ProgramVer/tree/master/docs)** and on the **[Wiki](https://github.com/Dog-Face-Development/ProgramVer/wiki)**. If more support is required, please open a **[GitHub Discussion](https://github.com/Dog-Face-Development/ProgramVer/discussions)** or join our **[Discord](https://discord.gg/x3G8adwVUe)**.
+Customization for ProgramVer can be found in the [`CUSTOMIZATION`](https://github.com/willtheorangeguy/ProgramVer/blob/master/docs/CUSTOMIZATION.md) doc. More documentation is available in the **[Documentation](https://github.com/willtheorangeguy/ProgramVer/tree/master/docs)** and on the **[Wiki](https://github.com/willtheorangeguy/ProgramVer/wiki)**. If more support is required, please open a **[GitHub Discussion](https://github.com/willtheorangeguy/ProgramVer/discussions)** or join our **[Discord](https://discord.gg/x3G8adwVUe)**.
 
 ## Testing
 
@@ -135,14 +135,15 @@ For more information about testing, see the [tests README](tests/README.md).
 ### Continuous Integration
 
 Tests are automatically run on GitHub Actions for every push and pull request across:
+
 - Operating Systems: Ubuntu, Windows, and macOS
 - Python Versions: 3.9, 3.10, 3.11, and 3.12
 
 ## Contributing
 
-Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/Dog-Face-Development/ProgramVer/compare).
+Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/willtheorangeguy/ProgramVer/compare).
 
-Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us (including how to sign our CLA).
+Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
 
 ## Changelog
 
@@ -177,10 +178,10 @@ This software uses the following open source packages, projects, services or web
 
 ## You may also like...
 
-* [PyWorkout](https://github.com/Dog-Face-Development/PyWorkout) - A minimal CLI to keep you inspired during your workout!
-* [PyAvatar](https://github.com/Dog-Face-Development/PyAvatar) - Easily display all of your creative avatars to keep them consistent across websites.
-* [Periodic Table Info](https://github.com/Dog-Face-Development/Periodic-Table-Info) - Print all the elements in the Periodic Table of the Elements, with an interactive prompt to learn more.
+* [PyWorkout](https://github.com/willtheorangeguy/PyWorkout) - A minimal CLI to keep you inspired during your workout!
+* [PyAvatar](https://github.com/willtheorangeguy/PyAvatar) - Easily display all of your creative avatars to keep them consistent across websites.
+* [Periodic Table Info](https://github.com/willtheorangeguy/Periodic-Table-Info) - Print all the elements in the Periodic Table of the Elements, with an interactive prompt to learn more.
 
 ## License
 
-This project is licensed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) - see the [`LICENSE`](LICENSE.md) file for details. See the [Privacy Policy](https://github.com/Dog-Face-Development/ProgramVer/blob/master/docs/legal/PRIVACY.md), [Terms and Conditions](https://github.com/Dog-Face-Development/ProgramVer/blob/master/docs/legal/TERMS.md), and [EULA](https://github.com/Dog-Face-Development/ProgramVer/blob/master/docs/legal/EULA.md) for legal information.
+This project is licensed under the [MIT License](https://mit-license.org/) - see the [`LICENSE`](LICENSE.md) file for details.

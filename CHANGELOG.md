@@ -1,12 +1,12 @@
 # Changelog
 
-## [v1.9.0](https://github.com/Dog-Face-Development/ProgramVer/releases/tag/1.9.0)
+## [v1.9.0](https://github.com/willtheorangeguy/ProgramVer/releases/tag/1.9.0)
 
 ### Added
 
 - PyPI Package.
 
-## [v1.8.0](https://github.com/Dog-Face-Development/ProgramVer/releases/tag/1.8.0)
+## [v1.8.0](https://github.com/willtheorangeguy/ProgramVer/releases/tag/1.8.0)
 
 ### Added
 
@@ -17,7 +17,7 @@
 
 - Documentation grammar.
 
-## [v1.0.0](https://github.com/Dog-Face-Development/ProgramVer/releases/tag/v1.0.0)
+## [v1.0.0](https://github.com/willtheorangeguy/ProgramVer/releases/tag/v1.0.0)
 
 ### Added
 
