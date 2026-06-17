@@ -1,2 +1,1 @@
-include imgs/dfdlogo.gif
-include imgs/pythonpoweredlengthgif.gif
+recursive-include programver/imgs *.gif *.png

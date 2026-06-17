@@ -53,12 +53,12 @@ jobs:
     - name: Run tests (Linux)
       if: runner.os == 'Linux'
       run: |
-        xvfb-run -a python -m pytest tests/ -v --cov=. --cov-report=xml --cov-report=term
+        xvfb-run -a python -m pytest tests/ -v --cov=programver --cov-report=xml --cov-report=term
     
     - name: Run tests (Windows/macOS)
       if: runner.os != 'Linux'
       run: |
-        python -m pytest tests/ -v --cov=. --cov-report=xml --cov-report=term
+        python -m pytest tests/ -v --cov=programver --cov-report=xml --cov-report=term
     
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v7
