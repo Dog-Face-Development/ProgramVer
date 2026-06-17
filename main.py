@@ -25,6 +25,7 @@ def ProgramVer():
             "the United States and other countries."
         ),
         license_path=os.path.join(base_dir, "LICENSE.md"),
+        eula_path=os.path.join(base_dir, "EULA.md"),
         license_blurb=(
             "\nProgramVer - Version window for DFD Co.'s programs\n"
             "Copyright (C) 2017-2026 Dog Face Development Company\n\n"
