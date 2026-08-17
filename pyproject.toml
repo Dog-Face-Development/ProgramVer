@@ -29,3 +29,6 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["imgs"]
+[tool.bandit]
+exclude_dirs = ["tests", "test", ".venv", "venv", "build", "node_modules"]
+skips = ["B101"]
