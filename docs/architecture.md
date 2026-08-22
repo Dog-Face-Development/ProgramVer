@@ -2,7 +2,7 @@
 
 One module, three functions, no dependencies.
 
-```
+```text
 main.py
 ├── get_resource_path(filename)   resolve against __file__
 ├── openLicense()                 read LICENSE.txt → its own window

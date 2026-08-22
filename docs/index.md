@@ -3,7 +3,7 @@
 A `winver`-style copyright and version window for your own Python programs: a logo, a version
 line, a trademark notice, a licence blurb, and buttons that open the full licence and EULA.
 
-```
+```text
 ProgramVer/
 ├── main.py          get_resource_path, openLicense, openEULA, ProgramVer
 ├── imgs/            the window's images

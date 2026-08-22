@@ -7,12 +7,11 @@ licensing decision rather than a documentation one.
 Ordered by severity. See [`docs/roadmap.md`](../roadmap.md) for the narrative version,
 which also covers deliberate non-goals.
 
-
 **6 open:** 2 high, 3 medium, 1 low.
 
 ## 1. The window cannot open: imgs/dfdlogo.gif is not in the repository
 
-**Severity:** High  
+**Severity:** High
 **Where:** `main.py` -> `ProgramVer`, `MANIFEST.in`
 
 **What:** `ProgramVer()` calls `PhotoImage(file=get_resource_path("imgs/dfdlogo.gif"))` as the first of its two images. `imgs/` contains only `pythonpoweredlengthgif.gif` and an egg-info directory -- `dfdlogo.gif` is absent, and `git ls-files` does not list it. `MANIFEST.in` explicitly includes it for packaging, so its absence is an omission rather than a decision.
@@ -23,7 +22,7 @@ which also covers deliberate non-goals.
 
 ## 2. Both document buttons read files that do not exist
 
-**Severity:** High  
+**Severity:** High
 **Where:** `main.py` -> `openLicense`, `openEULA`
 
 **What:** `openLicense` opens `get_resource_path("LICENSE.txt")` and `openEULA` opens `get_resource_path("EULA.txt")`, each with a bare `open(...)` and no guard. Neither file is in the repository: the licence here is `LICENSE.md`, and there is no EULA at all.
@@ -34,7 +33,7 @@ which also covers deliberate non-goals.
 
 ## 3. The test suite mocks the filesystem, so it passes against a program that cannot start
 
-**Severity:** Medium  
+**Severity:** Medium
 **Where:** `tests/test_main.py`
 
 **What:** All 14 tests patch `main.Tk`, `main.Text`, `main.Label`, `main.Button`, `main.PhotoImage`, and `builtins.open` (via `mock_open`). `test_get_resource_path` asserts only that the returned string **ends with** `dfdlogo.gif` -- never that the path resolves. Earlier documentation reported '100% code coverage for the main module'.
@@ -51,7 +50,7 @@ Keep mocking Tk; stop mocking `open` in tests whose purpose is to prove a file i
 
 ## 4. The window displays a GPL notice and another company's copyright, in an MIT repository
 
-**Severity:** Medium  
+**Severity:** Medium
 **Where:** `main.py` -> `trademarks`, `licenseblurb`, `info` labels; `LICENSE.md`
 
 **What:** The `trademarks` label reads 'Copyright (C) 2017 - 2024 Dog Face Development Co. All rights reserved in all countries', and `licenseblurb` renders the GNU GPL v3 notice for 'Dog Face Development Company'. `LICENSE.md` in this repository is **MIT, Copyright 2026 willtheorangeguy**. Each label carries a `# change as needed` comment, so the text is placeholder by design.
@@ -62,7 +61,7 @@ Keep mocking Tk; stop mocking `open` in tests whose purpose is to prove a file i
 
 ## 5. Packaging declares imgs/ as the package root, where there are no packages
 
-**Severity:** Medium  
+**Severity:** Medium
 **Where:** `setup.py`, `setup.cfg`
 
 **What:** `setup.py` has `packages=find_packages(where="imgs")` and `package_dir={"": "imgs"}`; `setup.cfg` repeats `package_dir = \n    = imgs` with `packages = find:` under `where = imgs`. `imgs/` contains image files and an egg-info directory -- no Python packages. `find_packages` therefore returns an empty list, and only `py_modules=["main"]` ships any code. A third description of the same package exists in `pyproject.toml`.
@@ -73,7 +72,7 @@ Keep mocking Tk; stop mocking `open` in tests whose purpose is to prove a file i
 
 ## 6. The README's integration instructions name a file that does not exist
 
-**Severity:** Low  
+**Severity:** Low
 **Where:** `README.md` (corrected in this pass), `docs/CUSTOMIZATION.md` (removed in this pass)
 
 **What:** The How To Use section instructed: 'Copy the `ProgramVer.py` file to your project's main directory', then 'add `from ProgramVer import *`' and 'call ProgramVer through the `ProgramVer()` function'. There is no `ProgramVer.py` -- the module is `main.py`. Separately, `docs/CUSTOMIZATION.md` located each editable string by line number ('_Line 11_', '_Line 40_'), and those no longer match `main.py`.
@@ -81,7 +80,6 @@ Keep mocking Tk; stop mocking `open` in tests whose purpose is to prove a file i
 **Why it matters:** Copying the module into another project is the documented primary use, and the instructions for it name the wrong file -- so a reader either copies nothing or copies `main.py` and finds the import line wrong too. The line-number references fail more quietly: they point at real lines containing different code, so someone following them edits the wrong string and gets a window that still shows the old text.
 
 **Suggested fix:** Fixed in this pass -- the README and `docs/configuration.md` now name `main.py` and locate each editable string by symbol rather than line number. Renaming the module to `programver.py` would make the original instructions true and is worth considering, since `main.py` is a poor name for a file meant to be dropped into someone else's project.
-
 
 ---
 
