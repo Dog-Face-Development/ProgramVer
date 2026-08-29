@@ -40,17 +40,23 @@
 
 ## Status
 
-**Currently broken as shipped.** `ProgramVer()` loads `imgs/dfdlogo.gif`, which is not in the repository, so the window fails before it appears. The two buttons read `LICENSE.txt` and `EULA.txt`, neither of which exists either.
+**2.0.0 — rewritten as a real package.** ProgramVer is now `programver`, an importable package
+built around a `VersionDialog` class, instead of a single file meant to be copied into your
+project. The issues that made 1.9.0 unable to start (missing `imgs/dfdlogo.gif`, missing
+`LICENSE.txt`/`EULA.txt`) are resolved — see [`docs/internal/known-issues.md`](docs/internal/known-issues.md)
+for the detailed before/after on each one.
 
-The test suite passes — it mocks every file access and every widget — so CI is green and the program still cannot start. Details and suggested fixes are in [`docs/internal/known-issues.md`](docs/internal/known-issues.md).
-
-The template is sound and the customisation points are real; it needs its assets back.
+The rest of `docs/` still describes the pre-2.0 flat `main.py` layout and is being updated
+incrementally; treat it as historical until noted otherwise on each page.
 
 ## Key Features
 
 - A `winver`-style window: logo, program name and version, trademark notice, licence blurb.
 - **Open License** and **Open EULA** buttons that display the full text in their own windows.
-- Importable as a function, so you can wire it to your own program's About menu.
+- A `VersionDialog` class you construct with your own name, version, and file paths — no
+  editing library internals.
+- Works standalone (creates its own window) or embedded in an existing Tkinter app (opens a
+  `Toplevel` instead of taking over the event loop).
 - Python-Powered badge included.
 - Pure standard library — Tkinter only.
 - Cross-platform.
@@ -58,21 +64,34 @@ The template is sound and the customisation points are real; it needs its assets
 ## Installation
 
 ```bash
-git clone https://github.com/willtheorangeguy/ProgramVer
-cd ProgramVer
-python main.py
+pip install programver
 ```
 
-See [`docs/installation.md`](docs/installation.md), including what you need to supply before it runs.
+Or from source:
+
+```bash
+git clone https://github.com/willtheorangeguy/ProgramVer
+cd ProgramVer
+python main.py   # runs the bundled demo
+```
 
 ## Usage
 
 ```python
-from main import ProgramVer
-ProgramVer()
+from programver import VersionDialog
+
+dialog = VersionDialog(
+    app_name="YourApp",
+    version="1.0.0",
+    copyright_text="Copyright (C) 2026 You. All rights reserved.",
+    license_path="LICENSE.md",
+    eula_path="EULA.md",
+)
+dialog.show()
 ```
 
-Every string in the window is meant to be edited for your project — see [`docs/configuration.md`](docs/configuration.md).
+See `main.py` in this repository for a complete, runnable example, including an optional logo
+and license blurb.
 
 ## Documentation
 
@@ -118,4 +137,4 @@ Sponsor [@willtheorangeguy](https://github.com/willtheorangeguy) on [PayPal](htt
 
 MIT — see [`LICENSE.md`](LICENSE.md).
 
-> Note the window itself currently displays a GPL blurb and a different copyright holder. That text is placeholder content meant to be replaced per project, but it does not match this repository's own licence — see [`docs/internal/known-issues.md`](docs/internal/known-issues.md).
+> Note `main.py`'s demo window displays a GPL blurb and a different copyright holder on purpose, to show that this text is meant to be replaced per project — it does not describe this repository's own licence. `python -m programver` shows this repository's actual MIT notice. See [`docs/internal/known-issues.md`](docs/internal/known-issues.md).

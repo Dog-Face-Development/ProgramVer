@@ -11,10 +11,11 @@ def readme():
 
 setup(
     name="programver",
-    version="1.9.0",
-    description="A Python version of Microsoft's 'winver', \
-        built to be customizable, and to show copyright info and licenses.",
+    version="2.0.0",
+    description="A customizable version dialog for Python applications, "
+    "inspired by Microsoft's winver.",
     long_description=readme(),
+    long_description_content_type="text/markdown",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: MIT License",
@@ -25,9 +26,8 @@ setup(
     keywords="program version windows winver microsoft license gui",
     url="https://github.com/willtheorangeguy/ProgramVer",
     author="willtheorangeguy",
-    packages=find_packages(where="imgs"),
-    package_dir={"": "imgs"},
+    packages=find_packages(include=["programver", "programver.*"]),
+    package_data={"programver.imgs": ["*.gif", "*.png"]},
     include_package_data=True,
-    py_modules=["main"],
-    entry_points={"console_scripts": ["programver=main:ProgramVer"]},
+    entry_points={"console_scripts": ["programver=programver.__main__:main"]},
 )

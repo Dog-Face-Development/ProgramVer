@@ -1,5 +1,12 @@
 # ProgramVer — Testing
 
+!!! warning "Pre-2.0 layout"
+    This page describes the pre-2.0 flat `main.py` layout. As of 2.0.0 the library is the
+    `programver` package (`VersionDialog`, `programver/dialog.py`) and `main.py` is a demo,
+    not the module itself — see [Known Issues](internal/known-issues.md) for what changed and
+    the [README](https://github.com/willtheorangeguy/ProgramVer#readme) for current usage. This
+    page is pending a rewrite for 2.0.
+
 ```bash
 pip install -r requirements.txt
 pytest
