@@ -4,11 +4,11 @@ requires = ["setuptools", "wheel"]
 
 [project]
 name = "ProgramVer"
-version = "1.9.0"
+version = "2.0.0"
 authors = [
   { name= "willtheorangeguy" },
 ]
-description = "A Python version of Microsoft's 'winver', built to be customizable, and to show copyright info and licenses."
+description = "A customizable version dialog for Python applications, inspired by Microsoft's winver."
 readme = "README.md"
 license = { file="LICENSE.md" }
 requires-python = ">=3.9"
@@ -24,11 +24,18 @@ classifiers = [
 "Homepage" = "https://github.com/willtheorangeguy/ProgramVer"
 "Bug Tracker" = "https://github.com/willtheorangeguy/ProgramVer/issues"
 
+[project.scripts]
+programver = "programver.__main__:main"
+
 [tool.setuptools]
 include-package-data = true
 
 [tool.setuptools.packages.find]
-where = ["imgs"]
+include = ["programver", "programver.*"]
+
+[tool.setuptools.package-data]
+"programver.imgs" = ["*.gif", "*.png"]
+
 [tool.bandit]
 exclude_dirs = ["tests", "test", ".venv", "venv", "build", "node_modules"]
 skips = ["B101"]

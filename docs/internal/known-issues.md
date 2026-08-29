@@ -7,9 +7,20 @@ licensing decision rather than a documentation one.
 Ordered by severity. See [`docs/roadmap.md`](../roadmap.md) for the narrative version,
 which also covers deliberate non-goals.
 
-**6 open:** 2 high, 3 medium, 1 low.
+**Update (2.0.0):** the package was rewritten around a `programver.VersionDialog` class
+(`programver/dialog.py`, `programver/_utils.py`, `programver/_text_viewer.py`,
+`programver/imgs/`). Issues 1, 2, 3, 5, and 6 below are resolved by that rewrite; see the
+per-issue notes. The rest of this page still describes the pre-2.0 flat `main.py` layout
+verbatim and has not been rewritten — treat file/line references below as historical.
+
+**6 tracked, 5 resolved in 2.0.0:** 2 high (resolved), 3 medium (2 resolved), 1 low (resolved).
 
 ## 1. The window cannot open: imgs/dfdlogo.gif is not in the repository
+
+> **Resolved in 2.0.0.** The 2.0 rewrite drops the `dfdlogo.gif` reference entirely —
+> `programver.VersionDialog` takes an optional `logo_path` supplied by the caller instead of
+> assuming a bundled logo. The package only bundles `pythonpoweredlengthgif.gif`, which does
+> exist. `main.py`'s demo no longer references a missing image.
 
 **Severity:** High
 **Where:** `main.py` -> `ProgramVer`, `MANIFEST.in`
@@ -22,6 +33,10 @@ which also covers deliberate non-goals.
 
 ## 2. Both document buttons read files that do not exist
 
+> **Resolved in 2.0.0.** `VersionDialog` takes explicit `license_path`/`eula_path` arguments
+> instead of hardcoding filenames. The `main.py` demo points them at `LICENSE.md` and the new
+> `EULA.md` (added in this pass), both of which exist in the repository.
+
 **Severity:** High
 **Where:** `main.py` -> `openLicense`, `openEULA`
 
@@ -32,6 +47,11 @@ which also covers deliberate non-goals.
 **Suggested fix:** Add plain-text `LICENSE.txt` and `EULA.txt`, or point the calls at files that exist. Either way, wrap the read and show the error in the window instead of the console -- a template will be copied into projects where these filenames are wrong.
 
 ## 3. The test suite mocks the filesystem, so it passes against a program that cannot start
+
+> **Resolved in 2.0.0.** `tests/test_main.py` was rewritten against the new package
+> (`TestVersionDialogInit`, `TestVersionDialogShow`, `TestTextViewer`, `TestGetOrCreateRoot`,
+> `TestModuleIntegration`). It still mocks tkinter itself (required for headless CI) but no
+> longer mocks away missing resource files, since the resources it exercises are real.
 
 **Severity:** Medium
 **Where:** `tests/test_main.py`
@@ -50,6 +70,14 @@ Keep mocking Tk; stop mocking `open` in tests whose purpose is to prove a file i
 
 ## 4. The window displays a GPL notice and another company's copyright, in an MIT repository
 
+> **Partially addressed in 2.0.0.** The package's own entry point (`programver/__main__.py`,
+> `python -m programver`) now shows accurate MIT text for this repository. The root `main.py`
+> is deliberately a *demo of customizing `VersionDialog` for a consuming project* and still
+> shows a placeholder GPL/"Dog Face Development" blurb on purpose, to illustrate that the text
+> is meant to be swapped per project — it no longer claims to be this repository's own notice
+> the way the pre-2.0 single-module design did. Still open if the placeholder text itself is
+> considered confusing.
+
 **Severity:** Medium
 **Where:** `main.py` -> `trademarks`, `licenseblurb`, `info` labels; `LICENSE.md`
 
@@ -61,6 +89,10 @@ Keep mocking Tk; stop mocking `open` in tests whose purpose is to prove a file i
 
 ## 5. Packaging declares imgs/ as the package root, where there are no packages
 
+> **Resolved in 2.0.0.** `pyproject.toml`, `setup.py`, and `setup.cfg` now all declare
+> `programver`/`programver.*` as the package (with `programver.imgs` package data), matching
+> where the code actually lives. The three build descriptions agree with each other again.
+
 **Severity:** Medium
 **Where:** `setup.py`, `setup.cfg`
 
@@ -71,6 +103,9 @@ Keep mocking Tk; stop mocking `open` in tests whose purpose is to prove a file i
 **Suggested fix:** Drop the `package_dir` and `find_packages` lines -- this is a single-module project and `py_modules` is the correct declaration. Then consolidate on `pyproject.toml` and delete `setup.py` and `setup.cfg`.
 
 ## 6. The README's integration instructions name a file that does not exist
+
+> **Resolved in 2.0.0.** The README's Usage section now names the real, current import:
+> `from programver import VersionDialog`. There is a real installable package to point at.
 
 **Severity:** Low
 **Where:** `README.md` (corrected in this pass), `docs/CUSTOMIZATION.md` (removed in this pass)
